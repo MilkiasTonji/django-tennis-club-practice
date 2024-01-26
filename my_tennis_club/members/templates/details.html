@@ -4,13 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My tennis club | Members</title>
+    <title>My tennis club | Details</title>
     <style>
-        ul {
-            color: black;
-            padding: 10px;
-        }
-
         .container {
             display: flex;
             flex-direction: column;
@@ -38,14 +33,11 @@
 
 <body>
     <div class="container">
-        <h1>Members</h1>
-        <ul>
-            {% for x in mymembers %}
-            <li>
-                <a href="details/{{x.id}}">{{x.firstname}} {{x.lastname}}</a>
-            </li>
-            {% endfor %}
-        </ul>
+        <h1>Details of {{mymember.firstname}}</h1>
+        <p>Full Name: {{mymember.firstname}} {{mymember.lastname}}</p>
+        <p>Phone:  {{mymember.phone}}</p>
+        <p>Member since: {{mymember.joined_date}}</p>
+        <p>Back to  <a href="/home/members">Members</a></p>
     </div>
 </body>
 
