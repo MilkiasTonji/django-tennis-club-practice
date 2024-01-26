@@ -1,0 +1,12 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Testing - My Tennis Club
+{% endblock%}
+
+
+{% block content %}
+    {% for x in fruits %}
+        <p>{{x}}</p>
+    {% endfor %}
+{% endblock %}
