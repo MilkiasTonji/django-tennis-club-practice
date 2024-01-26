@@ -1,44 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My tennis club | Details</title>
-    <style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-radius: 25px;
-            border: 1px salmon solid;
-            width: 30%;
-        }
+{% extends "master.html" %}
 
-        body {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            height: 100vh;
-        }
-    </style>
-</head>
+{% block title %}
+    Details about {{mymember.firstname}} {{mymember.lastname}}
+{% endblock %}
 
-<body>
-    <div class="container">
-        <h1>Details of {{mymember.firstname}}</h1>
-        <p>Full Name: {{mymember.firstname}} {{mymember.lastname}}</p>
-        <p>Phone:  {{mymember.phone}}</p>
-        <p>Member since: {{mymember.joined_date}}</p>
-        <p>Back to  <a href="/home/members">Members</a></p>
-    </div>
-</body>
 
-</html>
+{% block content%}
+    <h1>Details of {{mymember.firstname}}</h1>
+    <p>Full Name: {{mymember.firstname}} {{mymember.lastname}}</p>
+    <p>Phone:  {{mymember.phone}}</p>
+    <p>Member since: {{mymember.joined_date}}</p>
+    <p>Back to  <a href="/home/members">Members</a></p>
+
+{% endblock %}

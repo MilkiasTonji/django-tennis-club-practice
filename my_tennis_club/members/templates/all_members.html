@@ -1,52 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "master.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My tennis club | Members</title>
-    <style>
-        ul {
-            color: black;
-            padding: 10px;
-        }
+{% block title %}
+  My Tennis Club - List of all Members
+{% endblock %}
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border-radius: 25px;
-            border: 1px salmon solid;
-            width: 30%;
-        }
 
-        body {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-            overflow: hidden;
-            height: 100vh;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h1>Members</h1>
-        <ul>
-            {% for x in mymembers %}
-            <li>
-                <a href="details/{{x.id}}">{{x.firstname}} {{x.lastname}}</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-</body>
-
-</html>
+{% block content %}
+    <h1>Members</h1>
+    <ul>
+        {% for x in mymembers %}
+        <li>
+            <a href="details/{{x.id}}">{{x.firstname}} {{x.lastname}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
